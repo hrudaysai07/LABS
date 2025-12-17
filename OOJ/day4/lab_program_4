@@ -1,0 +1,60 @@
+import java.util.Scanner;
+abstract class Shape {
+  public int a;
+  public int b;
+  public Shape(int a, int b) {
+    this.a = a;
+    this.b = b;
+  }
+  public abstract void printArea();
+}
+class Rectangle extends Shape {
+  public Rectangle(int a, int b) {
+    super(a, b);
+  }
+  public void printArea() {
+    int area = a * b;
+    System.out.println("Area of Rectangle: " + area);
+  }
+}
+class circle extends Shape {
+  public circle (int radius) {
+    super(radius, 0);
+  }
+  public void printArea() {
+    double area = Math.PI * a * a;
+    System.out.printf("Area of Circle:" + area);
+  }
+}
+class triangle extends Shape {
+  public triangle(int a, int b) {
+    super(a, b);
+  }
+  public void printArea() {
+    double area = 0.5 * a * b;
+    System.out.println("Area of Triangle: " + area);
+  }
+}
+public class lab_program_4 {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    System.out.print("Enter length and breadth of Rectangle: ");
+    int length = input.nextInt();
+    int breadth = input.nextInt();
+    Shape rectangle = new Rectangle(length, breadth);
+    rectangle.printArea();
+
+    System.out.print("Enter radius of Circle: ");
+    int radius = input.nextInt();
+    Shape circle = new circle(radius);
+    circle.printArea();
+
+    System.out.print("\nEnter base and height of Triangle: ");
+    int base = input.nextInt();
+    int height = input.nextInt();
+    Shape triangle = new triangle(base, height);
+    triangle.printArea();
+
+    input.close();
+  }
+}
