@@ -55,12 +55,11 @@ void display() {
 
 int main() {
     int choice, value;
-
+    printf("Queue Operations Menu:\n");
+    printf("\n1. Insert\n2. Delete\n3. Display\n4. Exit\n");
     while (1) {
-        printf("\n1. Insert\n2. Delete\n3. Display\n4. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
-
         switch (choice) {
             case 1:
                 printf("Enter value to insert: ");
